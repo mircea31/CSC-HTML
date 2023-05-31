@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            🪨 Piatra
+        </title>
+        <link rel="stylesheet" href="syle.css">
+    </head>
+    <body>
+        
+            <table>
+                <!--Primul rand din tabel-->
+                <tr>
+                    <td>
+                        <h1>
+                            Primul jucator alege:
+                        </h1>
+                    </td>
+                    <td>
+                        <h1>
+                            Al doilea jucator alege:
+                        </h1>
+                    </td>
+                </tr>
+                <!--al doilea rand din tabel-->
+                <tr>
+                    <td>
+                        <h2 id="prim_jucator">
+                            -
+                        </h2>
+                    </td>
+                    <td>
+                        <h2 id="doi_jucator">
+                           - 
+                        </h2>
+                    </td>
+                </tr>
+                <!--Al treliea rand din tabel-->
+                <tr>
+                    <td>
+                        <button type="button" onclick="alegere_1='🪨 Piatra'">🪨 Piatra</button>
+                        <button type="button" onclick="alegere_1='✂️ Foarfeca'">✂️ Foarfeca</button>
+                        <button type="button" onclick="alegere_1='📰 Hartie'">📰 Hartie</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="alegere_2='🪨 Piatra'">🪨 Piatra</button>
+                        <button type="button" onclick="alegere_2='✂️ Foarfeca'">✂️ Foarfeca</button>
+                        <button type="button" onclick="alegere_2='📰 Hartie'">📰 Hartie</button>
+                    </td>
+                </tr>
+                <tr class="buton_verificare">
+                    <th colspan="2">
+                        <h1>
+                            <button style="font-size: larger;"type="button" onclick="verificare()">
+                                APASA AICI PENTRU A VEDEA CASTIGATORUL
+                            </button>
+                        </h1>
+                    </th>
+
+                </tr>
+                <tr class="castigator">
+                    <th colspan="2">
+                        <h1>A castigat: </h1>
+                        <h1 id="castig" style="font-size: larger;">
+                            
+                        </h1>
+                    </th>
+
+                </tr>
+    
+            </table>
+
+            <h1>
+                OPTIUNI: <br>
+                📰 📰 Hartie<br>
+                🪨 🪨 Piatra<br>
+                ✂️ ✂️ Foarfeca
+            </h1>>
+    
+        <script>
+            let alegere_1 = '';
+            let alegere_2 = '';
+            //🪨 Piatra, ✂️ Foarfeca, 📰 Hartie
+
+            // alegere_1 = prompt("Jucatorul 1 alege: ");
+            // alegere_2 = prompt("Jucatorul 2 alege: ");
+
+            //verificare();
+
+            /*
+                📰 📰 Hartie
+                🪨 🪨 Piatra
+                ✂️ ✂️ Foarfeca
+                
+            */
+
+            function verificare()
+            {   
+
+                // if(alegere_1=='📰 Hartie')
+                // {
+                //     alegere_1="📰 📰 Hartie"
+                // }
+
+                document.getElementById("prim_jucator").innerHTML=alegere_1;
+                document.getElementById("doi_jucator").innerHTML=alegere_2;
+                
+                if(alegere_1 == alegere_2)
+                {
+                    window.alert("CACEALMA");
+                }
+                else if (alegere_1 == '🪨 Piatra' && alegere_2 == '✂️ Foarfeca')
+                {
+                    window.alert("A castigat jucatorul 1");
+                    document.getElementById("castig").innerHTML=alegere_1;
+                }
+                else if (alegere_1 == '✂️ Foarfeca' && alegere_2 == '📰 Hartie')
+                {
+                    window.alert("A castigat jucatorul 1"); 
+                    document.getElementById("castig").innerHTML=alegere_1;               
+                }
+                else if(alegere_1 == '📰 Hartie' && alegere_2 == '🪨 Piatra')
+                {
+                    window.alert("A castigat jucatorul 1");  
+                    document.getElementById("castig").innerHTML=alegere_1;              
+                }
+                else 
+                {
+                    window.alert("A castigat jucatorul 2"); 
+                    document.getElementById("castig").innerHTML=alegere_2;               
+                }
+            }
+        </script>
+
+    </body>
+</html>
